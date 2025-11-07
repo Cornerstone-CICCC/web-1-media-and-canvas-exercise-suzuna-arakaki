@@ -8,16 +8,77 @@
 <body>
   <div class="container">
     <!-- AUDIO HTML GOES HERE -->
-
+     <h1>Suzuna - Media Exercise</h1>
+     <section id="audio-section">
+      <h2>Audio</h2>
+      <audio muted loop controls>
+        <source src="./assets/audio/piano.wav">
+      </audio>
+     </section>
     <!-- VIDEO HTML GOES HERE -->
-
+     <section id="video-section">
+      <h2>Video</h2>
+      <video width="400px" height="350px" muted controls poster="./assets/images/poster.jpg">
+        <source src="./assets/video/ocean.mp4">
+      </video>
+     </section>
     <!-- IMAGE MAP HTML GOES HERE-->
-
+     <section id="img-section">
+      <h2>Images</h2>
+      <img src="./assets/images/fruit_table.jpg" alt="fruit-table" usemap="#tablemap" width="600px">
+      <map name="tablemap">
+        <area shape="rect" coords="0, 300, 300, 600" href="https://en.wikipedia.org/wiki/Lavandula" target="_blank" alt="wikipedia/lavender">
+        <area shape="rect" coords="400, 350, 600, 600" href="https://en.wikipedia.org/wiki/Orange_(fruit)" target="_blank" alt="wikipedia/orange">
+        <area shape="circle" coords="400, 200, 100" href="https://en.wikipedia.org/wiki/Coffee" target="_blank" alt="wikipedia/coffee">
+        <!-- <a href="https://en.wikipedia.org/wiki/Lavandula" target="_blank">wikipedia/Lavender</a> -->
+      </map>
+     </section>
     <!-- CANVAS HTML GOES HERE -->
+     <section class="canvas-section">
+      <h2>Canvas</h2>
+      <canvas id="myCanvas" width="500px" height="500px" style="background-color: bisque;">
+      </canvas>
+     </section>
   </div>
 
   <script>
     /* CANVAS JAVASCRIPT GOES HERE */
+    const myCanvas = document.getElementById('myCanvas');
+    const context = myCanvas.getContext("2d");
+    
+
+    context.beginPath();
+    context.strokeStyle = "red";
+    context.moveTo(100, 100);
+    context.lineTo(350, 100);
+    context.stroke();
+
+    context.beginPath();
+    context.strokeStyle = "blue";
+    context.lineTo(350, 100);
+    context.lineTo(350, 350);
+    context.stroke();
+
+    context.beginPath();
+    context.strokeStyle = "black";
+    context.lineTo(350, 350);
+    context.lineTo(100, 350);
+    context.stroke();
+
+    context.beginPath();
+    context.strokeStyle = "green";
+    context.lineTo(100, 350);
+    context.lineTo(100, 100);
+    context.stroke();
   </script>
+
+  <style>
+    body {
+      background-image: url('./assets/images/background.jpg');
+      background-repeat: no-repeat;
+      background-position: center bottom;
+      background-color: green;
+    }
+  </style>
 </body>
 </html>
